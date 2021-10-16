@@ -1,0 +1,19 @@
+<div class="owners-btns">
+  <button>Добавить</button>
+  <button>Просмотр</button>
+  <button>Редактировать</button>
+  <button>Удалить</button>
+</div>
+
+<div class="owners-list">
+  <div class="item row">
+    <div class="col p-2">Фамилия</div>
+    <div class="col p-2">Имя</div>
+    <div class="col p-2">Отчество</div>
+    <div class="col p-2">Количество авто</div>
+  </div>
+  <div class="item" *ngFor="let owner of ownersList">
+    <input type="checkbox" (click)="selectOwner($event,owner)"/>
+    <app-owners-item class="row" [owner]="owner" [carsCount]="owner.cars.length"></app-owners-item>
+  </div>
+</div>
